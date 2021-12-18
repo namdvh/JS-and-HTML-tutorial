@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3.4 Cấu trúc if else lồng nhau</title>
+    <script>
+        function xuat_ket_qua(diemhk1, diemhk2) {
+            //tinh diem tb ca nam
+            dtb = (eval(diemhk1) + eval(diemhk2) * 2) / 3
+            //Tinh va xuat xep loai 
+            if (dtb >=9)
+                xl.innerText = "Giỏi"
+            else if (dtb >= 7)
+                xl.innerText = "Khá"
+            else if (dtb >= 5)
+                xl.innerText = "Trung bình"
+            else
+                xl.innerText = "Yếu";
+            return dtb;
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #006600;"></h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#33DA03" cellspacing="0" cellpaddding="3" align="center" bgcolor="#D9FED8" style="border-collapse: collapse
+        ;color: #006600;width: 338;">
+            <tr>
+                <td width="194">Điểm trung bình HKI:</td>
+                <td width="126"><input type="text" name="dtb" id="dtb1" size="5"></td>
+            </tr>
+            <tr>
+                <td>Điểm trung bình HKII</td>
+                <td><input type="text" name="dtb" id="dtb2" size="5"></td>
+            </tr>
+
+            <tr>
+                <td>Điểm trung bình cuối năm:</td>
+                <td><input type="text" name="dtb" id="dtbcn" size="5"></td>
+            </tr>
+            <tr>
+                <td>
+                    Xếp loại:
+                </td>
+                <td>
+                    <label id="xl" style="color: #FF0000;font-weight: bold;"></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" name="dongy" value="Xuât xếp loại"
+                        onclick="dtbcn.value=xuat_ket_qua(dtb1.value,dtb2.value)"></td>
+            </tr>
+
+
+        </table>
+    </form>
+</body>
+
+</html>

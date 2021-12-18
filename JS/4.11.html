@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.11 Sử dụng đối tượng window</title>
+    <script src="4.4.js"></script>
+    <script>
+        minsize=0
+        maxsize=50
+        function hienloichao(){
+            d=new Date()
+            if(d.getHours()<12)
+            chao.innerText="Chào buổi sáng"
+            else if(d.getHours()<17)
+            chao.innerText="Chào buổi chiều"
+            else
+            chao.innerText="chào buổi tối"
+            //Kiem tra de thuc hien lai ham
+            if(minsize<maxsize){
+                minsize++
+                chao.style.fontSize=minsize
+                window.setTimeout("hienloichao()",100)
+            }
+        }
+        function blinkchuoi(){
+            if(chao.style.color=="red")
+            chao.style.color=="black"
+            else
+            chao.style.color=="red"
+            window.setTimeout("blinkchuoi()",100)
+
+
+        }
+        function taodongho(){
+            // khoi tao mang co 10 phan tu 
+            so=new Array("00.gif","01.gif","02.gif","03.gif","04.gif","05.gif","06.gif","07.gif","08.gif","09.gif")
+            d=new Date()
+            h=d.getHours()
+            m=d.getMinutes()
+            s=d.getSeconds()
+            //xu ly hinh anh 
+            if(h<10){
+                gio1.src=so[0]
+                gio2.src=so[h]
+            }else
+            {
+                h=h.toString()
+                h1=h.charAt(0)
+                h2=h.charAt(1)
+                gio1.src=so[h1]
+                gio2.src=so[h2]
+            }
+            //xu ly hinh anh phut
+            if(m<10){
+                phut1.src=so[0]
+                phut2.src=so[m]
+            }
+            else{
+                m=m.toString()
+                phut1.src=so[m.charAt(0)]
+                phut2.src=so[m.charAt(1)]
+            }
+            //xu ly giay
+            if(m<10){
+                giay1.src=so[0]
+                giay2.src=so[s]
+            }
+            else{
+                s=s.toString()
+                giay1.src=so[m.charAt(0)]
+                giay2.src=so[m.charAt(1)]
+            }
+            if((h==12||h==17||h==23)&&m==0 && s==0){
+                minsize=0
+                hienloichao()
+            }
+            setTimeout("taodongho()",1000)
+        }
+        function khoidong(){
+            hienloichao()
+            blinkchuoi()
+            taodongho()
+        }
+    </script>
+</head>
+<body onload="khoidong()">
+    <table width="700" border="1" cellspacing="0" cellpadding="5" align="center" height="50px" bodercolor="#999999">
+        <tr>
+            <td width="168" bgcolor="#000000" align="center" valign="middle">
+                <img src="00.gif" id="gio1" alt="">
+                <img src="01.gif" alt="" id="gio2">
+                <img src="haicham.gif" alt="">
+                <img src="02.gif" id="phut1" alt="">
+                <img src="03.gif" id="phut2" alt="">
+                <img src="haicham.gif" alt="">
+                <img src="04.gif" id="giay1" alt="">
+                <img src="05.gif" id="giay2" alt="">
+            </td>
+            <td width="506" align="center"><div id="chao"></div></td>
+        </tr>
+    </table>
+</body>
+</html>

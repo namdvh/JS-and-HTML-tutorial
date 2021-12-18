@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Sử dụng CSS và DTHML</title>
+    <script>
+        i = 1
+        function the_hien_hinh() {
+            switch (i) {
+                case 1: khung_hinh.style.filter = "gray()"
+                break;
+                case 2: khung_hinh.style.filter = "xray()"
+                break;
+                case 3: khung_hinh.style.filter = "invert()"
+                break;
+                case 4: khung_hinh.style.filter = "alpha(Opacity=20)"
+                break;
+                case 5: khung_hinh.style.filter = ""
+                break;
+            }
+            if (i == 5)
+                i = 1
+            else
+                i++
+        }
+        function hien_tuade(){
+            td=document.getElementById("tieude")
+            td.style.left=window.event.clientX-10
+            td.style.top=window.event.clientY+20
+            td.style.visibility="visible"
+
+
+        }
+    </script>
+    <style type="text/css">
+        div.baiviet {
+            background-color: #FFFFCA;
+            border: dashed;
+            border-color: #FF9900;
+            position: absolute;
+            visibility: visible;
+            z-index: 2;
+            width: 450px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            padding: 10 10 10 10;
+            line-height: 20px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="setInterval('the_hien_hinh()',1000)" onmousedown="noidung.style.visibility='hidden'">
+<img src="hinh/muine.jpg" id="khung_hinh" alt="" width="250" height="162" onmouseover="hien_tuade()" onmouseout="tieude.style.visibility='hidden'" onclick="noidung.style.visibility='visible'">
+<div id="tieude"
+    style="position: absolute;visibility: hiddenl;color: #EB9F01;font-size: 40px;width: 530;font-weight: bold;z-index: 3;filter: shadow(color=#FFCC66,direction=150);"
+    align="center">Mũi Né - Huyền bí và quyến rũ</div>
+<div id="noidung" class="baiviet">
+    Biển và cát, đó là những gì mà Phan Thiết hào hiệp ban tặng cho những người đến thăm và du lịch tại vùng đất này.
+    Bạn có thể đến đây nghỉ dưỡng vào cả mùa mưa. <font color="#FF6600"
+        style="font-weight: bold;text-decoration: underline;"> Phan Thiết</font> là nơi nằm trong vùng nhiệt đới, ít
+    chịu ảnh hưởng của gió
+    mùa đông bắc, khí hậu nóng và khô. Lượng mưa trung bình chỉ có 800 -1.150 mm, nơi có lượng mưa ít nhất trong khu vực
+    Nam Bộ. Phan Thiết là 1 trong những thành phố trẻ nhất trong nước và là trung tâm giao dịch và trao đổi chính của
+    Bình Thuận nơi mà có nhiều cái nhất trong nước như: Tp. Phan Thiết là thành phố biển trẻ nhất nước, có tượng Phật
+    nằm dài nhất nước, Tháp nước Phan Thiết là tháp đẹp nhất nước, có ngọn Hải đăng Khe Gà cao nhất nước và có hồ Biển
+    Lạc rộng nhất nước v.v...
+    <p>Từ nhiều năm qua, đồi cát Mũi Né đã trở thành đề tài nổi bật trong các cuộc thi ảnh nghệ thuật, đồng thời đây là
+        một danh thắng nổi tiếng, là biểu tượng và là hình ảnh đẹp của vùng đất Bình Thuận. Bờ biển của Hòn Rơm sạch và
+        đẹp, nước trong xanh. Sóng chạy dưới chân những hàng dừa mát rượi và trĩu quả. Du khách cũng có thể khám phá
+        những bãi biển hoang sơ chưa bị khai thác bởi con người.</p>
+</div>
+
+
+
+</body>
+
+</html>

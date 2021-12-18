@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.6: sử dụng đối tượng Date và Boolean</title>
+    <script src="4.4.js"></script>
+    <script>
+        function in_lich(pngay, pthang, pnam) {
+            vngay = new Date(pnam, pthang, pngay)
+            //Xuat ra to lich
+            dnam.innerText = pnam
+            dthang.innerText = "Tháng " + eval(pthang + 1)
+            dngay.innerText = pngay
+            dthu.innerText = ten_thu(vngay)
+
+        }
+        function mo_trang() {
+            d = new Date()
+            in_lich(d.getDate(), d.getMonth(), d.getYear())
+            //xuat cau chao
+            h = d.getHours()
+            if (h < 12)
+                cauchao.innerText = "chào buổi sáng"
+            else if (h < 17)
+                cauchao.innerText = "chào buổi chiều"
+            else if (h < 23)
+                cauchao.innerText = "chào buổi tối"
+        }
+    </script>
+</head>
+
+<body>
+    <table border="5" bordercolor="#CCCCCC" cellspacing="5" cellpadding="5" align="center" width="120"
+        background="Nen.gif">
+        <tr>
+            <td align="center">
+                <div id="dnam" style="font-size: 14px; color: #FF0000;"></div>
+                <div id="dthang" style="font-size: 20px; color: #330066;"></div>
+                <div id="dngay" style="font-size: 60px; color: #FF0000;"></div>
+                <div id="dthu" style="font-size: 26px; color: #330066;"></div>
+            </td>
+        </tr>
+    </table>
+    <p>
+    <div id="cauchao" style="font-size: 20px;font-style: italic;color: #FF0000;" algin="center"></div>
+    <form action="" id="nhap">
+        <table align="center" width="300px" border="1" bordercolor="#330099" style="border-collapse: collapse;"
+            cellpadding="5">
+            <tr>
+                <td align="center">ngày <input type="text" size="2" name="" id="ngay">
+                    Tháng <input type="text" size="2" name="" id="thang">
+                    Năm <input type="text" size="4" name="" id="nam">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" name="" id="in" value="In lịch" onclick="traloi=new Boolean 
+                        traloi=confirm('Bạn có muốn in lại lịch không?')
+                        if(traloi==true)
+                        in_lich(ngay.value,eval(thang.value-1),nam.value)
+                        ">
+                </td>
+            </tr>
+        </table>
+
+
+
+    </form>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.3 Sử dụng DHTML(Marquee)</title>
+    <script>
+        i=1
+        function kich_hoat() {
+            lq1 = document.getElementById("m1")
+            lq2 = document.getElementById("m2")
+            lq3 = document.getElementById("m3")
+            lq4 = document.getElementById("m4")
+            switch (i) {
+                case 1:
+                    lq1.behavior = "alternate"
+                    lq2.behavior = "alternate"
+                    lq3.behavior = "alternate"
+                    lq4.behavior = "alternate"
+                    break
+                case 2:
+                    lq1.behavior = "scroll"
+                    lq2.behavior = "scroll"
+                    lq3.behavior = "scroll"
+                    lq4.behavior = "scroll"
+                    break
+                    case 3:
+                    lq1.behavior = "slide"
+                    lq2.behavior = "slide"
+                    lq3.behavior = "slide"
+                    lq4.behavior = "slide"
+                    break
+            }
+            if(i<3)
+            i++
+            else
+            i=1
+
+        }
+    </script>
+    <style type="text/css">
+        table {
+            width: 80px
+        }
+
+        td {
+            color: #FFFFFF;
+            font-size: 92px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onmousedown="kich_hoat()">
+    <marquee behavior="" direction="alternate" scrollamount="2" id="tieude"
+        style="color: #990066;background-color: #EEBBD0;font-size: 30px;font-weight: bold;">Hệ thống bài tập môn Lập
+        trình web 1 - HP4
+    </marquee>
+    <marquee behavior=""
+        style="color: #FF0000;font-weight: bold;font-size: 30px;filter:wave(add=0,phase=20,freq=2,strength=50);"
+        scrollamount="10" scrolldelay="1" direction="up">
+        <b>T<br>T<br>T<br>H<br></b>
+    </marquee>
+    <marquee behavior="slide" id="m1" direction="down" scrollamount="20" style="top:62px;left:305px ;position: absolute"
+        width="83px" height="248px">
+        <table>
+            <tr>
+                <td bgcolor="#000066">T</td>
+            </tr>
+        </table>
+    </marquee>
+    <marquee behavior="slide" id="m2" direction="right" scrollamount="20"
+        style="top:280px;left:40px ;position: absolute" width="425px" height="85px">
+        <table>
+            <tr>
+                <td bgcolor="#003399">T</td>
+            </tr>
+        </table>
+    </marquee>
+    <marquee behavior="slide" id="m3" direction="left" scrollamount="20"
+        style="top:193px;left:391px ;position: absolute" width="425px" height="85px">
+        <table>
+            <tr>
+                <td bgcolor="#003399">T</td>
+            </tr>
+        </table>
+    </marquee>
+    <marquee behavior="slide" id="m4" direction="up" scrollamount="20" style="top:90px;left:300px ;position: absolute"
+        width="83px" height="248px">
+        <table>
+            <tr>
+                <td bgcolor="#000066">H</td>
+            </tr>
+        </table>
+    </marquee>
+</body>
+
+</html>

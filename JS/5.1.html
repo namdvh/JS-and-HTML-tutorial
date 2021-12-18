@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5.1 Sử dụng css và Dhtml</title>
+    <script>
+        function the_hien_khung() {
+            khung_mn = document.getElementById("monngon")
+            khung_mn.style.marginLeft = document.body.clientWidth/2-200
+            khung_mn.style.marginTop = hinh.style.top+50
+            khung_mn.style.visibility = "visible"
+        }
+        function chekhung() {
+            document.getElementById("monngon").visibility = "hidden"
+        }
+    </script>
+    <style type="text/css">
+        .binhthuong {
+            position: relative;
+            font-weight: bold;
+            width: 520px;
+            height: 120px;
+            left: 140px;
+            top: 2px;
+        }
+
+        .bong {
+            position: absolute;
+            font-weight: bold;
+            width: 520px;
+            height: 120px;
+            left: 150px;
+            top: 9px;
+            z-index: -1;
+        }
+
+        .dropcap {
+            font: bold 400%, Arial;
+            border: double;
+            background-color: #FFCC99;
+            color: #FF8306;
+            float: left;
+        }
+
+        .khung {
+            border-style: ridge;
+            border-width: 10px;
+            border-color: #66CC00;
+            background-color: #D2FFD2;
+            width: 300;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .li {
+            list-style-image: url(Hinh/icon_list_c.gif);
+        }
+    </style>
+</head>
+
+<body topmargin="5px" style="font-family: Arial, Helvetica, sans-serif;size: 12px;">
+    <div align="center" class="binhthuong">
+        <h1 style="font-size: 44px; color: #FF8306;">Bông điên biển <br>Món ngon mùa nước nổi</h1>
+    </div>
+    <div align="center" class="bong">
+        <h1 style="font-size: 44px; color: #E4C478;">Bông điên biển <br>Món ngon mùa nước nổi</h1>
+    </div>
+    <div id="monngon" class="khung">
+        <font size="+3" style="font-family: Times New Roman;margin-left: 20;font-style: italic;font: bold;">Hương vị
+            miền Nam</font><br>
+        <ul style="margin-left: 20px;line-height: 20px;">
+            <li>Bánh tráng Mỹ Lồng, bánh Phồng Sơn đốc
+            <li>Dồi lươn rim nước cốt dừa
+            <li>Bún mắm
+            <li>Bún nước lèo Sóc trắng
+            <li>Nem lai vung
+            <li>Cốm dẹp
+            <li>Bưởi tân triều<p>
+        </ul>
+    </div>
+    <img src="Hinh/Diendien.jpg" id="hinh" alt="" align="right" onmouseover="the_hien_khung()"
+        onmouseout="chekhung()">
+    <div class="dropcap">M</div>ỗi năm, cứ vào đầu mùa nước nổi, nơi các bờ sông, bờ rạch, bờ ruộng, những cây điên
+    điển chết héo từ những tháng ngày nào tự nhiên xanh tươi trở lại làm đẹp thêm phong cảnh Đồng bằng sông Cửu Long.
+    Chừng một vài tháng sau, khi con nước tràn ngập các bờ sông, bờ ruộng, cũng là lúc điên điển trổ đầy cành những đóa
+    hoa vàng rực màu nắng phương Nam, phất phơ trong ngọn gió hoặc rũ oằn trong những cơn mưa
+    <p>Trước đây không lâu, người
+        nông dân nghèo khổ dùng bông điên điển nấu cháo cầm cự với cơn đói của những tháng ngày không có khả năng kiếm
+        được
+        tiền. Ngày nay, với những người nghèo, bông điên điển giúp họ có thêm thu nhập bên cạnh việc đánh bắt cá, tép
+        trên
+        những cánh đồng trắng xóa một màu nước nổi. Nhưng để trở thành món ngon, cách giản dị nhất là người ta dùng bông
+        điên điển làm dưa. Chỉ cần ngâm bông điên điển đã lặt rửa sạch với giá sống trong nước muối có độ mặn vừa chuẩn,
+        chừng ba ngày sau là đã có một dĩa dưa vừa chua vừa giòn chấm với nước tương giằm ớt ăn đã ngon mà chấm với cá
+        hoặc
+        thịt kho lại càng ngon hơn.
+    </p>
+</body>
+
+</html>

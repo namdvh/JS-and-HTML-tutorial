@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function la_so(so) {
+            if (isNaN(parseInt(so)))
+                return false
+            else
+                return true
+
+
+        }
+      function in_bang_cc(so){
+          if(la_so(so)){
+              str="";
+              for(i=1;i<=10;i++){
+                  str+=so+" * "+i+" = "+so*i+"<br>"
+              }
+              bang.innerHTML=str
+          }else
+          bang.innerHTML="Số nhập không hợp lệ"
+      }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #CE692D;">In bảng cửu chương</h2>
+    <form action="" id="nhap">
+    <table border="1" bordercolor="#CE692D" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC"
+        style="border-collapse: collapse;color: #990000;width: 338;">
+        <tr>
+            <td width="154">
+                Nhập cửu chương
+            </td>
+            <td width="169">
+                <input type="text" name="cc" id="cc" size="5">
+                <input type="button" value="   In    " size="30" name="" id="" onclick="in_bang_cc(cc.value)">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <div id="bang" style="color: #FF0000;width: 100px;" align="left">
+                    Bảng cửu chương</div>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>

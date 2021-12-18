@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function la_so(so) {
+            if (isNaN(parseInt(so)))
+                return false
+            else
+                return true
+
+
+        }
+        function xuat_ket_qua(so){
+            //xu ly 
+            str="Các số từ 1 đến "+so+" chia het cho 6 và 9 là: "
+            if(la_so(so)){
+                for(i=1;i<so;i++){
+                    if(i%6==0 && i%9==0){
+                        str+=i+","
+                    }
+                }
+                kq.innerText=str
+            }
+            else
+            kq.innerText="Số nhập không hợp lệ"
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: brown;">
+        Tìm các số chia hết cho 6 và 9
+    </h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#CE692D" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC"
+            style="border-collapse: collapse;color: #990000;width: 338;">
+            <tr>
+                <td width="154">
+                    Nhập một số
+                </td>
+                <td width="169">
+                    <input type="text" name="so" id="so" size="5">
+                    <input type="button" value="   IN   " id="" size="30" onclick="xuat_ket_qua(so.value)">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <div id="kq" style="color: #000099;">Kết quả</div>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>

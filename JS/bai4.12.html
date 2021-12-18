@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.12: Sử dụng các đối tượng DOM</title>
+    <script>
+        cot = 720
+        function taotieude() {
+            if (cot > 20) {
+                td.style.left = cot
+                cot--
+            }
+            window.setTimeout("taotieude()", 1)
+        }
+        function cuontrang() {
+            //dinh top cho tieu de
+            td.style.top = document.body.scrollTop
+            //dinh top cho hinh anh
+            hinh1.style.top=document.body.scrollTop+120
+            hinh3.style.top=document.body.scrollTop+260
+            hinh2.style.top=document.body.scrollTop+120
+            hinh4.style.top=document.body.scrollTop+260
+        }
+        function khoidong(){
+            taotieude()
+            setInterval("cuontrang()",100)
+        }
+    </script>
+</head>
+
+<body onload="khoidong()" topmargin="10px">
+    <p align="center" id="td"
+        style="font-size: 26px; font-weight: bold; color: #FFFF00;width: 720px;position: relative;background-color: #008A45;">
+        6 biểu tượng thiên nhiên của Phần Lan</p>
+    <table width="95%" border="1" bordercolor="#669999" align="center" style="border-collapse: collapse;">
+        <tr>
+            <td width="132">
+                <img src="Hinh/Hoa_lan.jpg" id="hinh1" style="position: absolute;left: 39px;top: 87px;" width="121"
+                    height="130" alt="">
+                <img src="Hinh/ca.jpg" id="hinh3" style="position: absolute;left: 40px;top: 224px;" width="121"
+                    height="130" alt="">
+            </td>
+            <td>
+                <p style="background-color: #C4FFC4;color: #336600;font-style: italic;" align="justify">
+                    Một cuộc bầu chọn thập kỷ 80 cho thấy thiên nga, gấu, cá pecca, cây bulô, hoa lan chuông và đá
+                    granite là những biểu tượng thể hiện quyền năng, truyền thống của đất nước Bắc Âu.
+                </p>
+                <ol style="margin-left: 20px;padding-left: 10px;">
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Thiên nga</font><br>
+                        Thiên nga có lẽ đã được coi là biểu tượng của Phần Lan từ thuở xa xưa. Ở những bức phác hoạ trên
+                        đá có niên đại hàng nghìn năm ở hồ Onega, thiên nga đã được thể hiện như một sự tích kỳ bí.
+                        Ngoài ra, hình ảnh chú thiên nga trắng muốt bay trên nền trời xanh được liên hệ với lá cờ của
+                        Phần Lan, có nền trắng với sọc xanh. Không chỉ thế, thiên nga là con vật phổ biến nhất được đưa
+                        vào các clip quảng cáo, và là dấu hiệu đảm bảo hàng hoá không gây nhiễm cho môi trường
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Chúa tể của miền hoang
+                            dã</font><br>
+                        Hiện ở Phần Lan có chừng 1.000 con gấu. Được coi là biểu tượng tiêu biểu, nhưng người Phần Lan
+                        đôi khi không cảm thấy thoải mái với con vật này. Lý do là người thu thuế từ trước đến nay được
+                        thể hiện dưới hình ảnh con gấu với chiếc mũ lưỡi trai và túi thu tiền to đùng.
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Hoa lan chuông </font>
+                        <br>
+                        Hoa lan chuông được biết đến là một loại thảo dược, đồng thời cũng chứa chất độc chết người. Hoa
+                        nở rộ vào tháng 6 với mùi hương tinh tế, có phần hơi hắc. Cũng có loại nước hoa mang mùi thơm
+                        đặc trưng này.
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Cây bulô </font>
+                        <br>
+                        Thế kỷ 19, cây bulô được lãng mạn hoá và đi vào văn chương khá nhiều. Truyện cổ tích Cây bulô và
+                        ngôi sao của Zacharias Topelius kể về hai đứa trẻ bị lạc. Sau nhiều ngày tìm kiếm, chúng trở về
+                        được ngôi nhà yêu dấu nhờ nhận ra cây bulô quen thuộc trước sân. Ngày nay, hình ảnh cô gái mặc
+                        trang phục truyền thống dựa vào cây bulô được coi là biểu tượng của Phần Lan, có tới hàng trăm
+                        thiệp mừng mang hình ảnh tương tự. Thậm chí có một người đàn ông trẻ đã cầu hôn với cô dâu tương
+                        lai bằng chiếc nhẫn làm từ vỏ cây bulô.
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Cá pecca </font>
+                        <br>
+                        Cá pecca thuộc họ cá rô, là một trong những thuỷ sinh phổ biến nhất ở Phần Lan, chúng sinh
+                        trưởng ở hầu hết ao hồ, sông suối. Chỉ có những hồ nước ở độ cao trên 450 m so với mực nước biển
+                        ở những vùng miền núi, loài cá này mới không có khả năng chinh phục
+                    <li>
+                        <font style="background-color: #C4FFC4;color: #008A45;font-weight: bold;">Đá granite</font>
+                        <br>
+                        Granite được hình thành từ thạch anh, Fenspat và mica cùng một số loại khoáng chất khác. Ở Phần
+                        Lan, ngoài việc xây dựng, granite cũng được sử dụng cho điêu khắc.
+                    </ol>
+            </td>
+            <td width="131">
+                <img src="Hinh/thien_nga.jpg" id="hinh2" style="position: absolute;left: 600px;top: 91px;" width="121" height="130" alt="">
+                <img src="Hinh/bulo.jpg" id="hinh4" style="position: absolute;left: 600px;top: 227px;" width="121" height="130" alt="">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.8</title>
+    <script src="4.4.js">
+    </script>
+    <script>
+        mang=new Array()
+        function tao_mag(){
+            kq.innerText="giá trị mảng sau khi xử lý"
+            if(mang.length>0)
+            mang.length=0
+            //Tim so ptu ngau nhien
+            sopt=Math.floor((11*Math.random())+10)
+            //Tao mang 
+            for (i=0;i<=sopt;i++){
+                gtri=Math.floor(91*Math.random()+10)
+                mang.push(gtri)
+            }
+            return mang
+
+        }
+        function sap_tang(a,b){
+            return (a-b)
+        }
+        function sap_giam(a,b){
+            return (b-a)
+        }
+        function sap_xep(tang){
+            if(tang)
+            mang.sort(sap_tang)
+            else
+            mang.sort(sap_giam)
+            return mang
+        }
+        function them_pt(vitri,giatri){
+            if(la_so(vitri) && la_so(giatri)){
+                mang.splice(vitri,0,giatri)
+                kq.innerText=mang
+            }
+            else
+            alert('Số nhập không hợp lệ')
+        }
+    </script>
+</head>
+<body>
+    <h2 align="center" style="color:#333399">Thao tác trên mảng</h2>
+    <form action="" id="nhap">
+        <table align="center" width="412" border="1" bordercolor="#330099" style="border-collapse: collapse;color: #330099;" cellpadding="5">
+        <tr>
+            <td width="100" align="left"><input type="button" name="" id="taomang" value="Tạo mảng" onclick="kq.innerText=tao_mag()"></td>
+            <td align="left" colspan="2"><div id="kq" style="color: #FF6600;">Giá trị mảng sau khi xử lí</div></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <input type="radio" name="sx" id="sxtang" value="1" checked onclick="kq.innerText=sap_xep(true)">Sắp xếp tăng
+                <input type="radio" name="sx" id="sxgiam" value="2" checked onclick="kq.innerText=sap_xep(false)">Sắp xếp giảm
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Thêm vào vị trí
+                <input type="text" name="" id="vt" size="2">
+               Giá trị <input type="text" name="" size="5" id="gt">
+               <input type="button" id="thuchien" value="Thêm" onclick="them_pt(vt.value,gt.value)">
+            </td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>

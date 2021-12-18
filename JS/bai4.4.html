@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.4 Sử dụng đối tượng Date</title>
+    <script src="4.4.js"></script>
+    <script>
+        function ten_thu(d) {
+            switch (d.getDay()) {
+                case 0:
+                    str = "Chủ nhật"
+                    break
+                case 1:
+                    str = "Thứ Hai"
+                    break
+                case 2:
+                    str = "Thứ Ba"
+                    break
+                    case 3:
+                    str = "Thứ Tư"
+                    break
+                    case 4:
+                    str = "Thứ Năm"
+                    break
+                    case 5:
+                    str = "Thứ Sáu"
+                    break
+                    case 6:
+                    str = "Thứ Bảy"
+                    break
+            }
+            return str
+        }
+        function xuat_ngay_sinh(d,m,y){
+            if(!la_so(d)|| !la_so(m) || !la_so(y)){
+                alert("Giá trị nhập không hợp lệ")
+                return ""
+            }
+            else{
+                // vNgay=new Date(y,m-1,d);
+                vNgay=new Date()
+                vNgay.setDate(d)
+                vNgay.setMonth(m-1)
+                vNgay.setFullYear(y)
+                str= ten_thu(vNgay)+ ", "+vNgay.getDate()+ "/"+(vNgay.getMonth()+1)+"/"+vNgay.getYear();
+                return str
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #990000;">Nhập ngày sinh của bạn</h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="CE692" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC" style="border-collapse: collapse
+        ;color: #990000; width: 315;">
+            <tr>
+                <td align="center">Ngày <input type="text" size="3" name="" id="ngay">
+                    Tháng <input type="text" size="3" name="" id="thang">
+                    Năm <input type="text" size="5" name="" id="nam">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color: #993300;color: #FFFFFF;">
+                    <div id="ngaysinh">Ngày sinh</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value="Xuất ngày sinh"
+                        onclick="ngaysinh.innerText=xuat_ngay_sinh(ngay.value,thang.value,nam.value)" name="" id=""> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

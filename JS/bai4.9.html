@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.10 Sử dụng đối tượng array</title>
+    <script src="4.4.js"></script>
+    <script>
+        function kiem_tra_chuoi(chuoi){
+            chuoi=trim(chuoi)
+            for(i=0,j=chuoi.length-1;i<j;i++,j--){
+                if(chuoi.substr(i,1)!=chuoi.substr(j,1))
+                return "chuỗi này đọc ngược xuôi không giống nhau"
+            }
+            return "chuỗi này đối xứng"
+        }
+    </script>
+</head>
+<body>
+    <h2 align="center" style="color: #CC0000;">Kiểm tra tính đối xứng của một chuỗi</h2>
+    <form action="" id="nhap">
+        <table align="center" width="412" border="1" bordercolor="#330099" style="border-collapse: collapse;color: #330099;" cellpadding="5">
+            <tr>
+                <td width="137" align="left">Nhập vào một chuỗi</td>
+                <td width="243" align="left">
+                    <input type="text" name="" id="tunhap">
+                </td>
+            </tr>
+            <tr><td align="left" colspan="2">
+                <div id="kq" style="color: #CC0000;"></div>
+            </td></tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Kiểm tra" name="" id="kt" onclick="kq.innerText=kiem_tra_chuoi(tunhap.value)">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

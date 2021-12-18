@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            function trim(chuoi){
+            //Cat khoang trang o dau chuoi
+            str= chuoi
+            i=0
+            while(chuoi.charCodeAt(i)==32){
+                str=chuoi.substr(i+1, chuoi.length-(i+1))
+                i+=1
+            }
+            //Cat khoang trang o cuoi chuoi
+            str2=str
+            i=str.length-1
+            while(chuoi.charCodeAt(i)==32)
+            {
+                str2=str.substr(0,i)
+                i-=1
+            }
+            return str2
+
+        }
+        function tim_thay_the(vanban, chtim, chthe){
+            chtim=trim(chtim)
+            chthe=trim(chthe)
+            //di tim chtim co trong van ban
+            //tim ko phan biet in thuong /""/i
+            if(vanban.search(eval("/"+chtim+"/i"))>0){
+                //dinh dang nen xanh chu trang
+                str_the="<font style='color:white;background-color:darkblue'>"+chthe+"</font>"
+                str=vanban.replace(eval("/"+chtim+"/gi"),str_the)
+                xuat.innerHTML=str
+
+            }else
+            {
+                alert("không tìm thấy chuỗi!!' "+chtim+"'")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #CE692D;">Tìm và thay thế</h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="CE692" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC" style="border-collapse: collapse
+        ;color: #990000; width: 500;">
+            <tr>
+                <td>Nhập một chuỗi</td>
+                <td width="342" align="left" valign="top">
+                    <textarea name="" id="doanvan" style="height: 50;width: 350px;" cols="30" rows="10"></textarea><div id="xuat"></div>
+                </td>
+            </tr>
+            <tr>
+                <td width="140" align="left">Nhập chuỗi tìm</td>
+                <td width="342" align="left">
+                    <input type="text" name="" id="chuoitim" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td  width="140" align="left">Chuỗi thay thế</td>
+                <td width="342" align="left">
+                    <input type="text" name="" id="chuoithe" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" name="" id="" value="Tìm và thay thế" onclick="tim_thay_the(doanvan.value,chuoitim.value,chuoithe.value)">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

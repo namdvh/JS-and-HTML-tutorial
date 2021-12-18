@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.17 :Sử dụng các đối tượng và sự kiện</title>
+    <script src="Thu_vien.js"></script>
+    <script>
+        function tao_ds_nam() {
+            d = new Date(), k = 0
+            for (i = d.getYear() - 5; i <= d.getYear() + 5; i++) {
+                document.forms['nhap'].nam.options[k] = new Option(i, i)
+                k++
+            }
+        }
+        function so_ngay(pnam, pthang) {
+            if (pthang == 4 || pthang == 6 || pthang == 9 || pthang == 11)
+                return 30
+            else if (pthang == 2) {
+                if ((pnam % 400 == 0) || (pnam % 100 != 0 && pnam % 4 == 0))
+                    return 29
+                else
+                    return 28
+            } else
+                return 31
+        }
+        function in_lich(pnam, pthang) {
+            d = new Date(pnam, pthang - 1, 1)
+            //xoa lich cu
+            xoa_lich()
+            for (i = 7; i <= 42; i += 7) {
+                bang_tam = document.getElementById("bang2")
+                dong = bang_tam.insertRow(i / 7)
+                for (j = 0; j <= 6; j++) {
+                    cot = dong.insertCell(j)
+                    cot.width = 50
+                    cot.align = "center"
+                    //In noi dung
+
+                }
+            }
+            in_noi_dung()
+        }
+        function xoa_lich() {
+            if (bang2.rows.length > 0) {
+                for (i = bang2.rows.length - 1; i >= 1; i--) {
+                    bang2.deleteRow(i)
+                }
+            }
+        }
+        function in_noi_dung(pNgay) {
+            dd = new Date()
+            vt = pNgay.getDay()+7
+            //Tinh ngay hien hanh
+            ngay_hh = dd.getDate()
+            songay = so_ngay(pNgay.getYear(), pNgay.getMonth() + 1)
+            mngay = 1
+            //in noi dung va giao dien
+            for (i = vt; i < vt + songay; i++) {
+                pNgay.setDate(mngay)
+                //xu li giao dien 
+                if (pNgay.getDay() == 0)
+                    bang2.cells(i).style.color = "red"
+                else if (pNgay.getDay() == 6) //thuBayt
+                    bang2.cells(i).style.color = "blue"
+                if (pNgay.getDate() == ngay_hh)
+                    bang2.cells(i).style.color = "#FF6600"
+                //in so ngay 
+                bang2.cells(i).innerText = mngay
+                mngay++
+            }
+        }
+        function khoidong() {
+            tao_ds_nam()
+            //khoi tao gia tri nam thang
+            d = new Date()
+            document.forms['nhap'].nam.value = d.getYear()
+            document.forms['nhap'].thang.value = d.getMonth() + 1
+            in_lich(d.getYear(), d.getMonth() + 1)
+
+        }
+    </script>
+</head>
+
+<body onload="khoidong()">
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#CE692D" cellspacing="0" cellpadding="3" align="center" bgcolor="FFFFCC"
+            style="border-collapse: collapse; color: #990000;width: 319;">
+            <tr>
+                <td width="366" align="center">
+                    Năm <select name="" id="nam" onchange="in_lich(this.value,thang.value)"></select>
+                    Tháng <select id="thang" onchange="in_lich(nam.value,this.value)">
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table id="bang2" border="1" bordercolor="#000066" style="border-collapse: collapse;"
+                        bgcolor="#FFFFFF">
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">CN</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Hai</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Ba</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Tư</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Năm</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Sáu</th>
+                        <th width="50" bgcolor="#CCCCCC" style="color: #FF0000;">Bảy</th>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

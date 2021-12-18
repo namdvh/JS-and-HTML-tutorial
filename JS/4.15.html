@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.15: Sử dụng các đối tượng</title>
+
+<script src="Thu_vien.js"></script>
+<script>
+    function tinh_tien() {
+        tong = 0
+        str = "<table width='250' align='center' border='1' bordercolor='#CC0000' style='border-collapse: collapse;'><tr><th colspan='3' align='center' style='color: #CC0000;'> Hóa đơn tính tiền </th></tr>"
+        //Tinh tien thuc an
+        stt = 0
+        chon_an = document.getElementById("thuc_an")
+        for (i = 0; i < chon_an.length; i++) {
+            if (chon_an.options[i].selected) {
+                stt++
+                tong += eval(chon_an.options[i].value) 
+                // str += "<tr>"
+                // str += "<td width='20' align='center'" + stt + "</td>" / stt
+                // str += "<td>" + chon_an.options[i].innerText + "</td>"
+                // str += "<td align='right'>" + dinh_dang_so(chon_an.options[i].value, 0, false, true,"") + "</td>" //don gia
+                // str += "</tr>"
+                str += "<tr><td width='20' align='center'>" + stt + "</td><td>" + chon_an.options[i].innerText + "</td><td align='right'>" + dinh_dang_so(chon_an.options[i].value, 0, false, true, "") + "</td><tr>"
+
+
+            }
+
+        }
+        //Tinh tien thuc uong
+        chon_uong = document.getElementById("thuc_uong")
+        for (i = 0; i < chon_uong.length; i++) {
+            if (chon_uong.options[i].selected) {
+                stt++
+                tong += eval(chon_uong.options[i].value) 
+                str += "<tr><td width='20' align='center'>" + stt + "</td><td>" + chon_uong.options[i].innerText + "</td><td align='right'>" + dinh_dang_so(chon_uong.options[i].value, 0, false, true, "") + "</td><tr>"
+
+            }
+
+        }
+        //tinh tien dich vu 
+        if (document.forms['nhap'].khan.checked) {
+            stt++
+            tong += 1000
+            str += "<tr><td width='20' align='center'>" + stt + "</td><td>Khăn</td><td align='right'>1000</td><tr>"
+        }
+        if (document.forms['nhap'].phong.checked) {
+            stt++
+            tong+=5000
+            str += "<td width='20' align='center'>" + stt + "</td><td>Phòng</td><td align='right'>5000</td><tr>"
+
+        }
+        //tổng cộng
+        str += "<tr style='font-weight:bold;color:#CC0000'><td width='20' align='center'></td><td>Tổng cộng</td><td align='right'>" +dinh_dang_so(tong,0,false,true,"")+"</td><tr></table>"
+        return str
+
+    }
+
+
+
+</script>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 align="center" style="color:#CC0000"> Thực đơn ăn sáng</h2>
+    <form action="" id="nhap">
+        <table align="center" width="460" border="1" bordercolor="#330099"
+            style="border-collapse: collapse;color: #300099;" cellpadding="5">
+            <tr align="center" style="font-weight: bold;">
+                <td>
+                    Thức ăn
+                </td>
+                <td>Nước giải khát</td>
+                <td width="130">Dịch vụ khác</td>
+            </tr>
+            <tr>
+                <td width="139" align="center">
+                    <select name="" id="thuc_an" multiple="multiple" size="9">
+                        <option value="15000" selected>Phở bò</option>
+                        <option value="10000">Cơm tấm</option>
+                        <option value="16000">Hủ tiếu nam vang</option>
+                        <option value="8000">Bánh mì ốp la</option>
+                        <option value="10000">Bánh mì bò kho</option>
+                        <option value="12000">Hủ tiếu bò kho</option>
+                        <option value="10000">Bánh mì bò kho</option>
+                        <option value="14000">Cháo lòng</option>
+                        <option value="18000">Bún bò huế</option>
+                        <option value="8000">Bánh cuốn</option>
+                    </select>
+                </td>
+                <td width="145" align="center">
+                    <select name="" id="thuc_uong" multiple="multiple" size="9">
+                        <option value="5000" selected>Cà phê đá</option>
+                        <option value="6000">Cà phê sữa đá</option>
+                        <option value="4000">Nước ngọt các loại</option>
+                        <option value="3000">Cà phê đen</option>
+                        <option value="1000">Trà đá</option>
+                        <option value="8000">Chanh dây</option>
+                        <option value="120000">Nước cam tươi</option>
+                        <option value="6000">Sữa tươi </option>
+                        <option value="5000">Xí muội</option>
+                    </select>
+                </td>
+                <td valign="top">Khăn lạnh <input type="checkbox" name="" id="khan"><br>
+                    Phòng lạnh <input type="checkbox" name="" id="phong"></td>
+            </tr>
+            <tr>
+                <td align="left" colspan="3">
+                    <div id="tong_tien" style="color: #CC0000;">Hóa đơn tính tiền</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="button" name="" id="tt" value="In hóa đơn tính tiền"
+                        style="color: #FFFFFF;background-color: #CC0000;font-weight: bold;"
+                        onclick="tong_tien.innerHTML=tinh_tien()">
+
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

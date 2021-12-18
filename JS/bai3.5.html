@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3.5 : Cấu trúc switch</title>
+    <script>
+        function tinh_tien_thuong(tienluong, xeploai) {
+            //Tinh he so 
+            var heso;
+            switch(xeploai){
+                case 'A':
+                heso=2;
+                break;
+                case 'B':
+                heso=1.8;
+                break;
+                case 'C':
+                heso=1.2;
+                break;
+                case 'D':
+                heso=0.8;
+                break;
+            }
+            //tinh va tra ve ket qua
+            return (tienluong*heso)
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #006600;">Tính tiền thưởng cuối năm </h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#33DA03" cellspacing="0" cellpadding="3" align="center" bgcolor="#D9FED8"
+            style="border-collapse: collapse;color: #006600;width: 338;">
+            <tr>
+                <td width="149">Tiền lương</td>
+                <td width="174">
+                    <input type="text" name="luong" id="luong" size="10">
+                </td>
+            </tr>
+            <tr>
+                <td>Xếp loại:</td>
+                <td>
+                    <select name="" id="xl">
+                        <option value="A">Loại A</option>
+                        <option value="B">Loại B</option>
+                        <option value="C">Loại C</option>
+                        <option value="D">Loại D</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" name="tinh" value="Tính" size="20" onclick="tienthuong.innerText='Tiền thưởng là '+tinh_tien_thuong(luong.value,xl.value)+'đồng'"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <font color="#FF0000"><label id="tienthuong"></label></font>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

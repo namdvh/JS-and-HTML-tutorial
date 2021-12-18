@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3.3: Cấu trúc if else</title>
+    <script>
+        function xuat_ket_qua(diemtb) {
+            //Check chuỗi dạng số dùng eval
+            if (eval(diemtb) >= 5)
+                return "được lên lớp"
+            else
+                return "Ở lại lớp"
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #006600;">Kết quả cuối năm học</h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#33DA03" cellspacing="0" cellpadding="3" align="center" bgcolor="#D9FED8" style="border-collapse: collapse
+        ;color: #006600;">
+            <tr>
+                <td>
+                    Điểm trung bình
+                </td>
+                <td>
+                    <input type="text" name="dtb" id="dtb" size="8">
+                </td>
+            </tr>
+            <tr>
+                <td>Kết quả</td>
+                <td>
+                    <input type="text" name="kq" id="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" name="dongy" value="Xuất kết quả" id="" onclick="kq.value=xuat_ket_qua(dtb.value)">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

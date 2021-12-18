@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function trim(chuoi){
+            //Cat khoang trang o dau chuoi
+            str= chuoi
+            i=0
+            while(chuoi.charCodeAt(i)==32){
+                str=chuoi.substr(i+1, chuoi.length-(i+1))
+                i+=1
+            }
+            //Cat khoang trang o cuoi chuoi
+            str2=str
+            i=str.length-1
+            while(chuoi.charCodeAt(i)==32)
+            {
+                str2=str.substr(0,i)
+                i-=1
+            }
+            return str2
+
+        }
+        function phan_tich(chuoi){
+            chuoi=trim(chuoi)
+            //tim khoang trang dau tien
+            d1=chuoi.indexOf(" ")
+            //last space
+            d2=chuoi.lastIndexOf(" ")
+            //cat va xuat chuoi ho
+            ho.innerText=chuoi.substr(0,d1)
+            //cat va xuat ten lot
+            lot.innerText=chuoi.slice(d1,d2)
+            ten.innerText=chuoi.slice(d2+1,chuoi.length)
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color: #CE692D;">Phân tích chuỗi</h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#CE692D" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC" style="border-collapse: collapse
+        ;color: #990000; width: 500;">
+            <tr>
+                <td width="120" align="left">
+                    Nhập họ và tên
+                </td>
+                <td width="362" align="left">
+                    <input type="text" name="" id="hoten" size="35">
+                    <input type="button" name="" value=" Phân tích" id="" onclick="phan_tich(hoten.value)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Họ
+                </td>
+                <td align="center">
+                    <div id="ho" style="color: #0000FF;font-weight: bold;">Họ</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lót
+                </td>
+                <td align="center">
+                    <div id="lot" style="color: #0000FF;font-weight: bold;">Tên lót</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tên
+                </td>
+                <td align="center">
+                    <div id="ten" style="color: #0000FF;font-weight: bold;">Tên</div>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>

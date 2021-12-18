@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dao_chuoi(chuoi){
+            len=chuoi.length
+            str="";
+            for(i=len;i>=0;i--){
+                str+=chuoi.substr(i,1)
+            }
+            return str
+        }
+    </script>
+</head>
+<body>
+    <h2 align="center" style="color: #CE692D;">Đảo chuỗi</h2>
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#CE692D" cellspacing="0" cellpadding="3" align="center" bgcolor="#FFFFCC" style="border-collapse: collapse;
+        color: #990000;width: 500;">
+        <tr>
+            <td width="120" align="left">Nhập một chuỗi</td>
+            <td width="362" align="left">
+                <input type="text" name="" id="chuoinhap" size="35">
+                <input type="button" name="" value=" Thực hiện " id="" onclick="chuoidao.innerText=dao_chuoi(chuoinhap.value)">
+            </td>
+        </tr>
+        <tr>
+            <td>Chuỗi đảo</td>
+            <td align="center">
+                <div id="chuoidao" style="color: #FF0000;">Chuỗi đảo</div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="4.4.js"></script>
+    <script>
+        function tinh_canh_huyen(canha, canhb) {
+            if (la_so(canha) && la_so(canhb))
+                return Math.round(Math.sqrt(Math.pow(canha, 2) + Math.pow(canhb, 2)))
+            else
+                return 0
+        }
+    </script>
+</head>
+
+<body>
+    <h2 align="center" style="color:#333399">Tính cạnh huyền</h2>
+    <form action="" id="nhap">
+        <table align="center" width="270" border="1" bordercolor="#330099" style="border-collapse: collapse
+        ;color: #333399;" cellpadding="5">
+            <tr>
+                <td width="111" align="left">Cạnh A <input type="text" size="3" name="" id="CanhA"></td>
+                <td width="139" align="left">Cạnh B
+                    <input type="text" name="text" id="canhB" size="3">
+                </td>
+            </tr>
+            <tr>
+                <td align="left">Cạnh huyền</td>
+                <td>
+                    <div id="huyen" style="background-color: #DFF7F9;">&radic;<font style="text-decoration: overline;">a
+                            <sup>2</sup>
+                            + b <sup>2</sup></font>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" name="" id="in" value="Tính" onclick="huyen.innerText=tinh_canh_huyen(CanhA.value,canhB.value)">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4.13 Sử dụng các đối tượng và sự kiện</title>
+    <script src="4.4.js"></script>
+    <script>
+        cot = 720
+        cot2 = -705
+        //Bay su kien trang web khi nhan chuot
+        document.onmousedown = tiep_tuc
+        function di_chuyen_tieu_de() {
+            //Kiem tra vi tri left cua hai dong tieu de
+            if (cot > 15 || cot2 < 15) {
+                if (cot > 15) {
+                    td.style.left = cot
+                    cot--
+                }
+                if (cot < 15) {
+                    td2.style.left = cot2
+                    cot2++
+                }
+                setTimeout("dichuyentieude()", 10)
+            }
+        }
+        function tiep_tuc() {
+            //kiem tra phim chuot
+            if (window.event.button == 1) {
+                cot = 720
+                cot2 = -705
+                di_chuyen_tieu_de()
+            }
+        }
+    </script>
+</head>
+
+<body onload="di_chuyen_tieu_de()">
+    <p align="center" id="td"
+        style="font-size: 32px; font-weight: bold; color: #FFFFFF;width: 720px;position: relative; background-color: #333399;">
+        TRUNG TÂM TIN HỌC</p>
+    <p align="center" id="td2"
+        style="font-size: 26px; font-weight: bold; color: #333399;width: 720px;position: relative; background-color: #D8E9FC;">
+        ĐẠI HỌC FPT</p>
+</body>
+
+</html>

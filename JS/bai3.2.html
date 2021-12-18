@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Ngôn ngữ JavaScript - Bài 3.2_1 Sử dụng hộp thoại cơ bản</title>
+    <script>
+        srt= 'Chào bạn '+ prompt('Hãy nhập tên của bạn')
+    </script>
+</head>
+<body onload="cauchao.innerText=srt">
+    <form action="" id="nhap">
+        <table border="1" bordercolor="#33DA03" cellspacing="0" cellpadding="3"  align="center"
+        bgcolor="#D9FED8" style="border-collapse: collapse;color: #006600;">
+        <tr>
+            <td><div id="cauchao" style="color: #FF0066;"></div>
+                Nhập tên bạn: <input type="text" name="ten" id="ten" size="30">
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><input type="button" name="mo" id="" value="Thay đổi câu chào" onclick="cauchao.innerText='Chào bạn '+ten.value">
+
+            </td>
+        </tr>
+
+        </table>
+    </form>
+</body>
+</html>
